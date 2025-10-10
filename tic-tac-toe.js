@@ -26,6 +26,14 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         });
 
+        square[a].addEventListener("mouseover", function(){
+            square[a].classList.add("hover");
+        });
+
+        square[a].addEventListener("mouseleave", function(){
+            square[a].classList.remove("hover");
+        });
+
     } 
 });
 
