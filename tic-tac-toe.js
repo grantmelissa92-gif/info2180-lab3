@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function(){
     //winner status
     const status = document.getElementById("status");
 
+    //original display status
+    const displaymsg = status.textContent;
+
     //set player and turn
     const player1 = "X";
     const player2 = "O";
@@ -62,6 +65,21 @@ document.addEventListener("DOMContentLoaded", function(){
         square[a].addEventListener("mouseleave", function(){
             square[a].classList.remove("hover");
         });
-    } 
+    }
+    
+    const reset = document.querySelector(".btn");
+    //reset the game
+    reset.addEventListener("click", function(){
+        for(let a = 0; a < square.length; a++){
+            square[a].textContent = "";
+            square[a].classList.remove("X", "O");
+        }
+        gameXorO.fill("");
+
+        status.textContent = displaymsg;
+        status.classList.remove("you-won");
+        current_turn = player1;
+    });
+    
 });
 
